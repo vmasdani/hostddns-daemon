@@ -17,3 +17,29 @@ UPDATE_URL=https://tunnel.hostddns.us/ddns/examplehostddnsupdateurl
 ```sh
 cross build x86_64-unknown-linux-musl --release
 ```
+
+## Systemd
+1. Create file in `/etc/systemd/system/hostddns-daemon.service`. Example service file (might want to change ExecStart & WorkiingDirectory)
+```sh
+[Unit]
+Description=HostDDNS Daemon Service
+After=network.target
+
+[Service]
+Type=Simple
+ExecStart=/root/hostddns-daemon/hostddns-daemon
+WorkingDirectory=/root/hostddns-daemon
+User=root
+
+[Install]
+WantedBy=multi-user.target
+```
+2. Run service
+```sh
+sudo systemctl start hostddns-daemon
+```
+
+3. Enable service
+```sh
+sudo systemctl enable hostddns-daemon
+```
