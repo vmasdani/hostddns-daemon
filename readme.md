@@ -15,7 +15,7 @@ UPDATE_URL=https://tunnel.hostddns.us/ddns/examplehostddnsupdateurl
 1. Install [cross](https://github.com/rust-embedded/cross)
 2. Run
 ```sh
-cross build x86_64-unknown-linux-musl --release
+cross build --target x86_64-unknown-linux-musl --release
 ```
 
 ## Systemd
