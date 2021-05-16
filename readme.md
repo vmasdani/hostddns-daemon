@@ -9,7 +9,7 @@ HostDDN daemon to send Public IP information every 1 minute.
 ```sh
 UPDATE_URL=https://tunnel.hostddns.us/ddns/examplehostddnsupdateurl
 ```
-3. Run `cargo run`
+4. Run `cargo run`
 
 ## Cross compiling MUSL
 1. Install [cross](https://github.com/rust-embedded/cross)
